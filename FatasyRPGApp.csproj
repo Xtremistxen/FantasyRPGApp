@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{764909A8-08B8-4697-895D-3D7628E649F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FatasyRPGApp</RootNamespace>
+    <AssemblyName>FatasyRPGApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCharacterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCharacterForm.Designer.cs">
+      <DependentUpon>AddCharacterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterEntity.cs" />
+    <Compile Include="CharactersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharactersForm.Designer.cs">
+      <DependentUpon>CharactersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassesForm.Designer.cs">
+      <DependentUpon>ClassesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FantasyRPGDBDataSet.cs">
+      <DependentUpon>FantasyRPGDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FantasyRPGDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FantasyRPGDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GameEntity.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForm.Designer.cs">
+      <DependentUpon>QueriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuestEntity.cs" />
+    <Compile Include="QuestPredictionInput.cs" />
+    <Compile Include="QuestPredictionOutput.cs" />
+    <Compile Include="QuestPredictorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestPredictorForm.Designer.cs">
+      <DependentUpon>QuestPredictorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestsForm.Designer.cs">
+      <DependentUpon>QuestsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCharacterForm.resx">
+      <DependentUpon>AddCharacterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CharactersForm.resx">
+      <DependentUpon>CharactersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassesForm.resx">
+      <DependentUpon>ClassesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QueriesForm.resx">
+      <DependentUpon>QueriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestPredictorForm.resx">
+      <DependentUpon>QuestPredictorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestsForm.resx">
+      <DependentUpon>QuestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FantasyRPGDBDataSet.xsc">
+      <DependentUpon>FantasyRPGDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FantasyRPGDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FantasyRPGDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FantasyRPGDBDataSet.xss">
+      <DependentUpon>FantasyRPGDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
