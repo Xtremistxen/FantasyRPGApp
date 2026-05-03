@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnViewClasses = new System.Windows.Forms.Button();
             this.btnViewCharacters = new System.Windows.Forms.Button();
             this.btnViewQuests = new System.Windows.Forms.Button();
@@ -35,127 +36,134 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddCharacter = new System.Windows.Forms.Button();
             this.btnQuestPredictor = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnViewClasses
             // 
-            this.btnViewClasses.Location = new System.Drawing.Point(342, 248);
+            this.btnViewClasses.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewClasses.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewClasses.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewClasses.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnViewClasses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnViewClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewClasses.Location = new System.Drawing.Point(111, 444);
+            this.btnViewClasses.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewClasses.Name = "btnViewClasses";
-            this.btnViewClasses.Size = new System.Drawing.Size(97, 23);
+            this.btnViewClasses.Size = new System.Drawing.Size(194, 23);
             this.btnViewClasses.TabIndex = 0;
-            this.btnViewClasses.Text = "View Classes";
-            this.btnViewClasses.UseVisualStyleBackColor = true;
+            this.btnViewClasses.UseVisualStyleBackColor = false;
             this.btnViewClasses.Click += new System.EventHandler(this.btnViewClasses_Click);
             // 
             // btnViewCharacters
             // 
-            this.btnViewCharacters.Location = new System.Drawing.Point(342, 277);
+            this.btnViewCharacters.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewCharacters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewCharacters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewCharacters.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnViewCharacters.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnViewCharacters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewCharacters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewCharacters.Location = new System.Drawing.Point(111, 404);
+            this.btnViewCharacters.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewCharacters.Name = "btnViewCharacters";
-            this.btnViewCharacters.Size = new System.Drawing.Size(97, 23);
+            this.btnViewCharacters.Size = new System.Drawing.Size(194, 32);
             this.btnViewCharacters.TabIndex = 1;
-            this.btnViewCharacters.Text = "View Characters";
-            this.btnViewCharacters.UseVisualStyleBackColor = true;
+            this.btnViewCharacters.UseVisualStyleBackColor = false;
             this.btnViewCharacters.Click += new System.EventHandler(this.btnViewCharacters_Click);
             // 
             // btnViewQuests
             // 
-            this.btnViewQuests.Location = new System.Drawing.Point(342, 306);
+            this.btnViewQuests.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewQuests.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewQuests.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewQuests.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnViewQuests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnViewQuests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewQuests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnViewQuests.Location = new System.Drawing.Point(111, 482);
+            this.btnViewQuests.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewQuests.Name = "btnViewQuests";
-            this.btnViewQuests.Size = new System.Drawing.Size(97, 23);
+            this.btnViewQuests.Size = new System.Drawing.Size(194, 20);
             this.btnViewQuests.TabIndex = 2;
-            this.btnViewQuests.Text = "View Quests";
-            this.btnViewQuests.UseVisualStyleBackColor = true;
+            this.btnViewQuests.UseVisualStyleBackColor = false;
             this.btnViewQuests.Click += new System.EventHandler(this.btnViewQuests_Click);
             // 
             // btnRunQueries
             // 
-            this.btnRunQueries.Location = new System.Drawing.Point(342, 369);
+            this.btnRunQueries.BackColor = System.Drawing.Color.Transparent;
+            this.btnRunQueries.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRunQueries.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnRunQueries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRunQueries.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRunQueries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunQueries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnRunQueries.Location = new System.Drawing.Point(111, 520);
+            this.btnRunQueries.Margin = new System.Windows.Forms.Padding(4);
             this.btnRunQueries.Name = "btnRunQueries";
-            this.btnRunQueries.Size = new System.Drawing.Size(97, 23);
+            this.btnRunQueries.Size = new System.Drawing.Size(186, 22);
             this.btnRunQueries.TabIndex = 3;
-            this.btnRunQueries.Text = "Run Queries";
-            this.btnRunQueries.UseVisualStyleBackColor = true;
+            this.btnRunQueries.UseVisualStyleBackColor = false;
             this.btnRunQueries.Click += new System.EventHandler(this.btnRunQueries_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(691, 415);
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Location = new System.Drawing.Point(748, 530);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(97, 23);
+            this.btnExit.Size = new System.Drawing.Size(138, 30);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAddCharacter
             // 
-            this.btnAddCharacter.Location = new System.Drawing.Point(342, 219);
+            this.btnAddCharacter.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCharacter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCharacter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnAddCharacter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCharacter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCharacter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnAddCharacter.Location = new System.Drawing.Point(154, 210);
+            this.btnAddCharacter.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCharacter.Name = "btnAddCharacter";
-            this.btnAddCharacter.Size = new System.Drawing.Size(97, 23);
+            this.btnAddCharacter.Size = new System.Drawing.Size(143, 30);
             this.btnAddCharacter.TabIndex = 5;
-            this.btnAddCharacter.Text = "Add Character";
-            this.btnAddCharacter.UseVisualStyleBackColor = true;
+            this.btnAddCharacter.UseVisualStyleBackColor = false;
             this.btnAddCharacter.Click += new System.EventHandler(this.btnAddCharacter_Click);
             // 
             // btnQuestPredictor
             // 
-            this.btnQuestPredictor.Location = new System.Drawing.Point(342, 171);
+            this.btnQuestPredictor.BackColor = System.Drawing.Color.Transparent;
+            this.btnQuestPredictor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuestPredictor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnQuestPredictor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQuestPredictor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuestPredictor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuestPredictor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnQuestPredictor.Location = new System.Drawing.Point(154, 309);
+            this.btnQuestPredictor.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuestPredictor.Name = "btnQuestPredictor";
-            this.btnQuestPredictor.Size = new System.Drawing.Size(97, 23);
+            this.btnQuestPredictor.Size = new System.Drawing.Size(143, 30);
             this.btnQuestPredictor.TabIndex = 6;
-            this.btnQuestPredictor.Text = "Quest Predictor";
-            this.btnQuestPredictor.UseVisualStyleBackColor = true;
+            this.btnQuestPredictor.UseVisualStyleBackColor = false;
             this.btnQuestPredictor.Click += new System.EventHandler(this.btnQuestPredictor_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(245, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Welcome to the Fantasy RPG Character and Quest Manager.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 203);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Use the buttons below to view, add, and analyze RPG data.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 353);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Choose a query below to display database results.";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(319, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Enter a character level and quest reward to predict quest difficulty.";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(933, 588);
             this.Controls.Add(this.btnQuestPredictor);
             this.Controls.Add(this.btnAddCharacter);
             this.Controls.Add(this.btnExit);
@@ -163,10 +171,14 @@
             this.Controls.Add(this.btnViewQuests);
             this.Controls.Add(this.btnViewCharacters);
             this.Controls.Add(this.btnViewClasses);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fantasy RPG Character and Quest Manager";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -179,10 +191,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddCharacter;
         private System.Windows.Forms.Button btnQuestPredictor;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -99,7 +99,7 @@
             this.Controls.Add(this.btnAllCharacters);
             this.Controls.Add(this.dgvQueryResults);
             this.Name = "QueriesForm";
-            this.Text = "QueriesForm";
+            this.Text = "Database Queries";
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fantasyRPGDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fantasyRPGDBDataSet)).EndInit();
