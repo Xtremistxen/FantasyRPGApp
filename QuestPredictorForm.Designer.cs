@@ -29,37 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestPredictorForm));
             this.txtPredictLevel = new System.Windows.Forms.TextBox();
             this.txtPredictReward = new System.Windows.Forms.TextBox();
             this.btnPredictDifficulty = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblPredictionResult = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPredictLevel
             // 
-            this.txtPredictLevel.Location = new System.Drawing.Point(325, 168);
+            this.txtPredictLevel.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtPredictLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPredictLevel.ForeColor = System.Drawing.Color.Gold;
+            this.txtPredictLevel.Location = new System.Drawing.Point(325, 145);
             this.txtPredictLevel.Name = "txtPredictLevel";
-            this.txtPredictLevel.Size = new System.Drawing.Size(100, 20);
+            this.txtPredictLevel.Size = new System.Drawing.Size(147, 20);
             this.txtPredictLevel.TabIndex = 0;
             // 
             // txtPredictReward
             // 
-            this.txtPredictReward.Location = new System.Drawing.Point(325, 229);
+            this.txtPredictReward.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtPredictReward.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPredictReward.ForeColor = System.Drawing.Color.Gold;
+            this.txtPredictReward.Location = new System.Drawing.Point(325, 209);
             this.txtPredictReward.Name = "txtPredictReward";
-            this.txtPredictReward.Size = new System.Drawing.Size(100, 20);
+            this.txtPredictReward.Size = new System.Drawing.Size(147, 20);
             this.txtPredictReward.TabIndex = 1;
             // 
             // btnPredictDifficulty
             // 
-            this.btnPredictDifficulty.Location = new System.Drawing.Point(335, 277);
+            this.btnPredictDifficulty.BackColor = System.Drawing.Color.Transparent;
+            this.btnPredictDifficulty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPredictDifficulty.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnPredictDifficulty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPredictDifficulty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPredictDifficulty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPredictDifficulty.Location = new System.Drawing.Point(344, 251);
             this.btnPredictDifficulty.Name = "btnPredictDifficulty";
-            this.btnPredictDifficulty.Size = new System.Drawing.Size(75, 23);
+            this.btnPredictDifficulty.Size = new System.Drawing.Size(112, 23);
             this.btnPredictDifficulty.TabIndex = 2;
-            this.btnPredictDifficulty.Text = "Predict Difficulty";
-            this.btnPredictDifficulty.UseVisualStyleBackColor = true;
+            this.btnPredictDifficulty.UseVisualStyleBackColor = false;
             this.btnPredictDifficulty.Click += new System.EventHandler(this.btnPredictDifficulty_Click);
             // 
             // contextMenuStrip1
@@ -70,43 +80,29 @@
             // lblPredictionResult
             // 
             this.lblPredictionResult.AutoSize = true;
-            this.lblPredictionResult.Location = new System.Drawing.Point(306, 336);
+            this.lblPredictionResult.BackColor = System.Drawing.Color.Black;
+            this.lblPredictionResult.ForeColor = System.Drawing.Color.Gold;
+            this.lblPredictionResult.Location = new System.Drawing.Point(300, 310);
             this.lblPredictionResult.Name = "lblPredictionResult";
             this.lblPredictionResult.Size = new System.Drawing.Size(134, 13);
             this.lblPredictionResult.TabIndex = 4;
             this.lblPredictionResult.Text = "Prediction will appear here.";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(325, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Enter character level 1-20";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(325, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Enter reward amount 1-500";
-            // 
             // QuestPredictorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPredictionResult);
             this.Controls.Add(this.btnPredictDifficulty);
             this.Controls.Add(this.txtPredictReward);
             this.Controls.Add(this.txtPredictLevel);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestPredictorForm";
-            this.Text = "QuestPredictorForm";
+            this.Text = "Quest Difficulty Predictor";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +115,5 @@
         private System.Windows.Forms.Button btnPredictDifficulty;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblPredictionResult;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
