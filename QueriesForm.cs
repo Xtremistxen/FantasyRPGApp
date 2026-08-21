@@ -1,103 +1,171 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
-using FatasyRPGApp.FantasyRPGDBDataSetTableAdapters;
+
 
 namespace FatasyRPGApp
 {
-    // QueriesForm is responsible for executing database queries
-    // and displaying the results in a DataGridView
+    /// <summary>
+    /// Provides database query tools for retrieving and displaying
+    /// character and class information from the Fantasy RPG database.
+    /// The form also measures the execution time of each query.
+    /// </summary>
     public partial class QueriesForm : Form
     {
-        // TableAdapter used to interact with the Characters table
-        // This allows us to run predefined queries created in the dataset designer
-        private CharactersTableAdapter charactersTableAdapter =
-            new CharactersTableAdapter();
+        /// <summary>
+        /// Provides access to database queries used by this form.
+        /// </summary>
+        private readonly QueryRepository queryRepository;
 
-        // Connection string used to connect to the SQL Server database
-        // This is used for manual SQL queries such as JOIN operations
-        private string connectionString =
-            @"Data Source=localhost\SQLEXPRESS;Initial Catalog=FantasyRPGDB;Integrated Security=True;TrustServerCertificate=True";
-
-        // Constructor initializes the form and its components
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueriesForm"/> class.
+        /// </summary>
         public QueriesForm()
         {
             InitializeComponent();
+            queryRepository = new QueryRepository();
         }
 
-        // This method is triggered when the "Show All Characters" button is clicked
-        // It retrieves all character records from the database using a TableAdapter query
+        /// <summary>
+        /// Retrieves all character records from the database,
+        /// displays them in the query results grid, and reports
+        /// the query execution time.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnAllCharacters_Click(object sender, EventArgs e)
         {
-            // Stopwatch is used to measure performance of the query execution
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            Stopwatch stopwatch = Stopwatch.StartNew();
 
-            // The DataGridView is populated with all character data
-            dgvQueryResults.DataSource = charactersTableAdapter.GetAllCharacters();
+            try
+            {
+                dgvQueryResults.DataSource =
+                    queryRepository.GetAllCharacters();
 
-            // Stop timing after the query completes
-            stopwatch.Stop();
+                stopwatch.Stop();
 
-            // Display how long the query took to execute
-            MessageBox.Show("All characters query completed in " + stopwatch.ElapsedMilliseconds + " ms.");
+                ShowQueryPerformance(
+                    "All characters",
+                    stopwatch.ElapsedMilliseconds);
+            }
+            catch (SqlException ex)
+            {
+                stopwatch.Stop();
+
+                ShowDatabaseError(ex);
+            }
         }
 
-        // This method is triggered when the "Level > 10" button is clicked
-        // It retrieves only characters above level 10 using a filtered query
+        /// <summary>
+        /// Retrieves characters above level 10 from the database,
+        /// displays them in the query results grid, and reports
+        /// the query execution time.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnHighLevel_Click(object sender, EventArgs e)
         {
-            // Start performance timing
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            Stopwatch stopwatch = Stopwatch.StartNew();
 
-            // Load only high-level characters into the DataGridView
-            dgvQueryResults.DataSource = charactersTableAdapter.GetHighLevelCharacters();
+            try
+            {
+                dgvQueryResults.DataSource =
+                    queryRepository.GetHighLevelCharacters();
 
-            // Stop timing after query finishes
-            stopwatch.Stop();
+                stopwatch.Stop();
 
-            // Display execution time to the user
-            MessageBox.Show("High level characters query completed in " + stopwatch.ElapsedMilliseconds + " ms.");
+                ShowQueryPerformance(
+                    "High level characters",
+                    stopwatch.ElapsedMilliseconds);
+            }
+            catch (SqlException ex)
+            {
+                stopwatch.Stop();
+
+                ShowDatabaseError(ex);
+            }
         }
 
-        // This method is triggered when the "Characters + Classes" button is clicked
-        // It performs a JOIN query to combine data from the Characters and Classes tables
+        /// <summary>
+        /// Executes a SQL INNER JOIN between the Characters and Classes
+        /// tables, displays each character with their associated class,
+        /// and reports the query execution time.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnJoin_Click(object sender, EventArgs e)
         {
-            // Start measuring query execution time
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            Stopwatch stopwatch = Stopwatch.StartNew();
 
-            // SQL JOIN query that combines character data with class names
-            // This query retrieves character name, level, and corresponding class name
-            string query = @"SELECT Characters.CharacterName, Characters.Level, Classes.ClassName
-                     FROM Characters
-                     INNER JOIN Classes ON Characters.ClassID = Classes.ClassID";
-
-            // Create a connection to the SQL Server database
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                // SqlDataAdapter is used to execute the query and fill a DataTable
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                dgvQueryResults.DataSource =
+                    queryRepository.GetCharactersWithClasses();
 
-                // DataTable will store the results of the query
-                DataTable dt = new DataTable();
+                stopwatch.Stop();
 
-                // Execute the query and fill the DataTable with results
-                adapter.Fill(dt);
-
-                // Bind the DataTable to the DataGridView to display results
-                dgvQueryResults.DataSource = dt;
+                ShowQueryPerformance(
+                    "Character and class join",
+                    stopwatch.ElapsedMilliseconds);
             }
+            catch (SqlException ex)
+            {
+                stopwatch.Stop();
 
-            // Stop timing after query execution is complete
-            stopwatch.Stop();
-
-            // Show how long the JOIN query took
-            MessageBox.Show("Join query completed in " + stopwatch.ElapsedMilliseconds + " ms.");
+                ShowDatabaseError(ex);
+            }
         }
-    }
+
+        /// <summary>
+        /// Displays the execution time of a completed database query.
+        /// </summary>
+        /// <param name="queryName">
+        /// The user-friendly name of the query.
+        /// </param>
+        /// <param name="elapsedMilliseconds">
+        /// The query execution time in milliseconds.
+        /// </param>
+        private void ShowQueryPerformance(
+            string queryName,
+            long elapsedMilliseconds)
+        {
+            MessageBox.Show(
+                $"{queryName} query completed in " +
+                $"{elapsedMilliseconds} ms.",
+                "Query Complete",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Displays a consistent error message when a database operation fails.
+        /// </summary>
+        /// <param name="exception">
+        /// The SQL exception that caused the database operation to fail.
+        /// </param>
+        private void ShowDatabaseError(SqlException exception)
+        {
+            MessageBox.Show(
+                "The database query could not be completed.\n\n" +
+                exception.Message,
+                "Database Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+    } 
 }
+    
+

@@ -3,81 +3,136 @@ using System.Windows.Forms;
 
 namespace FatasyRPGApp
 {
-    // This is the main menu form of the application
-    // It allows the user to navigate to different parts of the program
+    /// <summary>
+    /// Represents the main menu of the Fantasy RPG Character and Quest Manager.
+    /// Provides navigation to the application's character, class, quest,
+    /// query, and quest prediction features.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainForm"/> class
+        /// and creates sample RPG objects for demonstration purposes.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
 
-            // Creates sample objects when the program starts
-            // This helps demonstrate the object-oriented part of the project
-            CreateSampleObjects();
         }
 
-        // This method creates multiple objects from the custom classes
-        // It demonstrates object creation, inheritance, and polymorphism
-        private void CreateSampleObjects()
-        {
-            CharacterEntity hero1 = new CharacterEntity(1, "Aric", 12, 1);
-            CharacterEntity hero2 = new CharacterEntity(2, "Lyra", 9, 2);
+   
 
-            QuestEntity quest1 = new QuestEntity(1, "Goblin Camp Raid", 150, 1);
-            QuestEntity quest2 = new QuestEntity(2, "Crystal Cave Search", 300, 2);
-
-            MessageBox.Show(
-                hero1.GetDisplayInfo() + "\n" +
-                hero2.GetDisplayInfo() + "\n" +
-                quest1.GetDisplayInfo() + "\n" +
-                quest2.GetDisplayInfo(),
-                "Sample RPG Objects"
-            );
-        }
-
-        // Opens the form that allows the user to add a new character to the database
+        /// <summary>
+        /// Opens the form used to create and save a new character.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-            new AddCharacterForm().ShowDialog();
+            using (AddCharacterForm form = new AddCharacterForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Opens the quest predictor form
-        // This form demonstrates the planned machine learning feature
+        /// <summary>
+        /// Opens the quest difficulty prediction form.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnQuestPredictor_Click(object sender, EventArgs e)
         {
-            new QuestPredictorForm().ShowDialog();
+            using (QuestPredictorForm form = new QuestPredictorForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Opens the Classes form when the button is clicked
+        /// <summary>
+        /// Opens the form used to view and edit character class records.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnViewClasses_Click(object sender, EventArgs e)
         {
-            ClassesForm form = new ClassesForm();
-            form.ShowDialog();
+            using (ClassesForm form = new ClassesForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Opens the Characters form when the button is clicked
+        /// <summary>
+        /// Opens the form used to view and edit character records.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnViewCharacters_Click(object sender, EventArgs e)
         {
-            CharactersForm form = new CharactersForm();
-            form.ShowDialog();
+            using (CharactersForm form = new CharactersForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Opens the Quests form when the button is clicked
+        /// <summary>
+        /// Opens the form used to view and edit quest records.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnViewQuests_Click(object sender, EventArgs e)
         {
-            QuestsForm form = new QuestsForm();
-            form.ShowDialog();
+            using (QuestsForm form = new QuestsForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Opens the Queries form when the button is clicked
-        // This form runs database queries and displays results
+        /// <summary>
+        /// Opens the form used to execute and display database queries.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnRunQueries_Click(object sender, EventArgs e)
         {
-            QueriesForm form = new QueriesForm();
-            form.ShowDialog();
+            using (QueriesForm form = new QueriesForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        // Closes the application when the Exit button is clicked
+        /// <summary>
+        /// Closes the main form and exits the application.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();

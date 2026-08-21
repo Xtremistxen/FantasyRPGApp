@@ -3,27 +3,54 @@ using System.Windows.Forms;
 
 namespace FatasyRPGApp
 {
-    // This form is used to view and edit quest data from the database
+    /// <summary>
+    /// Provides the user interface for viewing and editing
+    /// quest records stored in the Fantasy RPG database.
+    /// </summary>
     public partial class QuestsForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuestsForm"/> class.
+        /// </summary>
         public QuestsForm()
         {
             InitializeComponent();
         }
 
-        // Saves any changes made to the quests data
-        private void questsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Validates the current quest data, completes any active edits,
+        /// and saves all changes to the database.
+        /// </summary>
+        /// <param name="sender">
+        /// The control that triggered the save event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the button click.
+        /// </param>
+        private void questsBindingNavigatorSaveItem_Click(
+            object sender,
+            EventArgs e)
         {
-            this.Validate(); // Checks that all input is valid
-            this.questsBindingSource.EndEdit(); // Ends editing on the current record
-            this.tableAdapterManager.UpdateAll(this.fantasyRPGDBDataSet); // Saves changes to the database
+            Validate();
+            questsBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(fantasyRPGDBDataSet);
         }
 
-        // Runs when the form loads
-        // Loads quest data from the database into the form
-        private void QuestsForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Loads quest records from the database when the form opens.
+        /// </summary>
+        /// <param name="sender">
+        /// The form that triggered the load event.
+        /// </param>
+        /// <param name="e">
+        /// The event data associated with the form load event.
+        /// </param>
+        private void QuestsForm_Load(
+            object sender,
+            EventArgs e)
         {
-            this.questsTableAdapter.Fill(this.fantasyRPGDBDataSet.Quests);
+            questsTableAdapter.Fill(
+                fantasyRPGDBDataSet.Quests);
         }
     }
 }

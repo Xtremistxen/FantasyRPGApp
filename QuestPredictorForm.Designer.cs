@@ -35,6 +35,8 @@
             this.btnPredictDifficulty = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblPredictionResult = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
+            this.lblReward = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPredictLevel
@@ -88,6 +90,28 @@
             this.lblPredictionResult.TabIndex = 4;
             this.lblPredictionResult.Text = "Prediction will appear here.";
             // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.BackColor = System.Drawing.Color.Cornsilk;
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.Location = new System.Drawing.Point(321, 122);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(163, 20);
+            this.lblLevel.TabIndex = 5;
+            this.lblLevel.Text = "Enter Character Level";
+            // 
+            // lblReward
+            // 
+            this.lblReward.AutoSize = true;
+            this.lblReward.BackColor = System.Drawing.Color.Cornsilk;
+            this.lblReward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReward.Location = new System.Drawing.Point(321, 186);
+            this.lblReward.Name = "lblReward";
+            this.lblReward.Size = new System.Drawing.Size(167, 20);
+            this.lblReward.TabIndex = 6;
+            this.lblReward.Text = "Enter Reward Amount";
+            // 
             // QuestPredictorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +119,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblReward);
+            this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblPredictionResult);
             this.Controls.Add(this.btnPredictDifficulty);
             this.Controls.Add(this.txtPredictReward);
@@ -115,5 +141,7 @@
         private System.Windows.Forms.Button btnPredictDifficulty;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblPredictionResult;
+        private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.Label lblReward;
     }
 }
