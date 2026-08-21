@@ -1,11 +1,32 @@
 ﻿namespace FatasyRPGApp
 {
-    // This class represents the output from the machine learning prediction.
-    // PredictedLabel tells whether the model thinks the quest is hard.
+    /// <summary>
+    /// Represents the result produced by the
+    /// quest difficulty prediction system.
+    /// </summary>
     public class QuestPredictionOutput
     {
-        public bool PredictedLabel { get; set; }
-        public float Probability { get; set; }
-        public float Score { get; set; }
+        /// <summary>
+        /// Gets or sets the predicted difficulty of the quest.
+        /// </summary>
+        public QuestDifficulty Difficulty { get; set; }
+
+        /// <summary>
+        /// Gets or sets the calculated difficulty score
+        /// associated with the quest.
+        /// </summary>
+        public float QuestDifficultyScore { get; set; }
+
+        /// <summary>
+        /// Gets or sets the difference between the character's
+        /// level and the calculated quest difficulty score.
+        /// </summary>
+        public float LevelDifference { get; set; }
+
+        /// <summary>
+        /// Gets or sets a user-friendly message describing
+        /// the prediction result.
+        /// </summary>
+        public string Message { get; set; }
     }
 }

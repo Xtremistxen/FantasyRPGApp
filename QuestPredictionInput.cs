@@ -1,13 +1,20 @@
 ﻿namespace FatasyRPGApp
 {
-    // This class represents the input data for the machine learning feature.
-    // The final version will use character level and reward gold to predict quest difficulty.
+    /// <summary>
+    /// Represents the character and quest information used
+    /// by the quest difficulty prediction system.
+    /// </summary>
     public class QuestPredictionInput
     {
+        /// <summary>
+        /// Gets or sets the level of the character attempting the quest.
+        /// </summary>
         public float CharacterLevel { get; set; }
-        public float RewardGold { get; set; }
 
-        // This value represents whether the quest is considered hard in training data.
-        public bool IsHardQuest { get; set; }
+        /// <summary>
+        /// Gets or sets the amount of gold awarded
+        /// for completing the quest.
+        /// </summary>
+        public float RewardGold { get; set; }
     }
 }
