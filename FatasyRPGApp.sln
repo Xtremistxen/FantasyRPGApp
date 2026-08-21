@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.37203.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatasyRPGApp", "FatasyRPGApp.csproj", "{764909A8-08B8-4697-895D-3D7628E649F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatasyRPGApp.Tests", "..\FatasyRPGApp.Tests\FatasyRPGApp.Tests.csproj", "{79275444-8F29-422D-9A5E-860BDBD6DBEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyRPGApp.Tests", "..\FatasyRPGApp.Tests\FantasyRPGApp.Tests.csproj", "{79275444-8F29-422D-9A5E-860BDBD6DBEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

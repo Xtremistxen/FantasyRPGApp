@@ -72,6 +72,33 @@ namespace FatasyRPGApp
         }
 
         /// <summary>
+        /// Deletes character records that match the specified character name.
+        /// </summary>
+        /// <param name="characterName">
+        /// The name of the character to delete.
+        /// </param>
+        public void DeleteCharacterByName(string characterName)
+        {
+            const string query =
+                "DELETE FROM Characters " +
+                "WHERE CharacterName = @name";
+
+            using (SqlConnection connection =
+                   new SqlConnection(connectionString))
+            using (SqlCommand command =
+                   new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue(
+                    "@name",
+                    characterName);
+
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        /// <summary>
         /// Retrieves all available character classes
         /// from the Classes table.
         /// </summary>
